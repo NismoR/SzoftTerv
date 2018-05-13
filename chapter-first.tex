@@ -4,43 +4,54 @@
 \section{Szöveges UseCase(k)}
 \subsection{Main Scenerio}
 \begin{enumerate}
-	\item Jegyzőkönyv kiválasztása.
+	\item Bejelentkezés
+		\begin{itemize}
+			\item Elsődleges aktor: vizsgálatot végző munkatárs
+			\item Elsődleges, sikeres forgatókönyv: A vizsgálatot végző munkatárs megadja az azonosítóját és jelszavát.
+		\end{itemize}	
+	\item A rendszer megjeleníti a főmenüt
+	\item Az alkoholszondás vizsgálathoz tartozó jegyzőkönyvsablon kiválasztása
 		\begin{itemize}
 			\item Elsődleges aktor: vizsgálatot végző munkatárs
 			\item Elsődleges, sikeres forgatókönyv: A vizsgálatot végző munkatárs kiválasztja az alkoholszondás vizsgálat jegyzőkönyv sablont.
 		\end{itemize}
-	\item A rendszer elküldi a megfelelő sablont.	
-	\item Jegyzőkönyv felvétele.
+	\item A rendszer elküldi a megfelelő sablont
+	\item Jegyzőkönyv felvétele
 		\begin{itemize}
 			\item Elsődleges aktor: vizsgálatot végző munkatárs
-			\item Elsődleges, sikeres forgatókönyv: A vizsgálatot végző munkatárs felveszi a vizsgált munkatárs nevét és azonosítóját, illetve a vizsgálatot kérő felettes nevét és azonosítóját, illetve meg kell adnia még a saját nevét és azonosítóját. Ezután a szondás vizsgálat eredménye mellett még megjegyzést is írhat a jegyzőkönyvbe. 
+			\item Elsődleges, sikeres forgatókönyv: A vizsgálatot végző munkatárs felveszi a vizsgált munkatárs nevét és azonosítóját, illetve a vizsgálatot kérő felettes nevét és azonosítóját, ezeken felül meg kell adnia még a saját nevét és azonosítóját. A jegyzőkönyvben rögzítenie kell továbbá a vizsgálat eredményét, illetve a vizsgált munkatárs megjegyzését. 
 		\end{itemize}
-	\item Jegyzőkönyv aláírása.
+	\item A rendszer megerősíti a kitöltött adatok hitelességét
+	\item Jegyzőkönyv aláírása
 	\begin{itemize}
 		\item Elsődleges aktor: az eljárásban résztvevő személy 
 		\item Elsődleges, sikeres forgatókönyv: Az eljárásban résztvevő személy aláírja a jegyzőkönyvet.
 	\end{itemize}
-	\item A rendszer megerősíti a kitöltött adatok hitelességét.
-	\item A rendszer elmenti a jegyzőkönyvhöz tartozó adatokat.
-	\item A rendszer üzenetet küld, a sikeres jegyzőkönyv felvételről.
+	\item A rendszer jóváhagyja, hogy a megfelelő személyek aláírták a jegyzőkönyvet
+	\item A rendszer feltölti a szerverre az elkészített jegyzőkönyvet
+	\item A rendszer üzenetet küld, a sikeres jegyzőkönyv felvételéről
 \end{enumerate}
 
 \subsection{Extensions}
-\begin{itemize}
-	\item Vérvizsgálat opcionális igénylése.
+\begin{description}
+	\item [1/a] Vérvizsgálat opcionális igénylése
 		\begin{itemize}
 			\item Elsődleges aktor: vizsgálatot végző munkatárs
 			\item Alternatív forgatókönyv: Abban az eseten ha a szondás vizsgálat eredményével nem ért egyet a vizsgált munkatárs, vérvizsgálatot kér. 4-es UseCase következik ez után.
 		\end{itemize}
-	\item Vérvizsgálati eredmény csatolása.
+	\item [1/b] Vérvizsgálati eredmény csatolása
 		\begin{itemize}
 			\item Elsődleges aktor: üzemorvos
 			\item Alternatív forgatókönyv:  Az üzemorvos tetszőleges jegyzőkönyvhöz mellékletet is csatolhat, természetesen ennek csak akkor van értelme ha a vizsgált munkatárs vérvizsgálatot kér. Minden esetben amikor csatol az üzemorvos valamit egy jegyzőkönyvhöz alá is kell írnia azt, így a 4-es UseCase következik.
 		\end{itemize}
-	\item \textbf{2/a.} A rendszer elutasítja a jegyzőkönyv sablon kérést a megfelelő jogosultság hiányára hivatkozva. A folyamat a UseCase 1-es lépésétől folytatodik.
-	\item \textbf{5/a.} A rendszer hibát talált adatok kitöltésénél. A nem megfelelően kitöltött, vagy érvénytelen adatok mezője mellé piros felkiáltó jelet helyez. 3-as UseCase következik.
-	\item \textbf{5/b.} A rendszer hibát talált a fájl csatolásánál. 4-es UseCase következik.
-\end{itemize}
+	%-----------------------------------------------------
+	%TODO átírni az összes szart!!!!!
+	%-------------------------------------------------
+	\item [2/a] Nem megfelelő bejelentkezési adatok. Ugrás az 1-es UseCase-re.
+	\item [6/a] A rendszer hibát talált az adatok kitöltésénél. 5-ös UseCase következik.
+	\item [9/a] Hiányzó vagy hibás aláírás esetén a 7-es UseCase következik.
+	\item [7/b] A rendszer hibát talált a fájl csatolásánál. 6-os UseCase következik.
+\end{description}
 
 \newpage
 \section{Aktivitás diagram}
