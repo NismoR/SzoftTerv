@@ -34,23 +34,25 @@
 
 \subsection{Extensions}
 \begin{description}
-	\item [1/a] Vérvizsgálat opcionális igénylése
+	\item [7/a] Vérvizsgálat opcionális igénylése
 		\begin{itemize}
 			\item Elsődleges aktor: vizsgálatot végző munkatárs
-			\item Alternatív forgatókönyv: Abban az eseten ha a szondás vizsgálat eredményével nem ért egyet a vizsgált munkatárs, vérvizsgálatot kér. 4-es UseCase következik ez után.
+			\item Alternatív forgatókönyv: Abban az eseten ha a szondás vizsgálat eredményével nem ért egyet a vizsgált munkatárs, vérvizsgálatot kér. A \textbf{8/a} UseCase következik ez után.
 		\end{itemize}
-	\item [1/b] Vérvizsgálati eredmény csatolása
+	\item [8/a] Vérvizsgálati eredmény csatolása
 		\begin{itemize}
 			\item Elsődleges aktor: üzemorvos
-			\item Alternatív forgatókönyv:  Az üzemorvos tetszőleges jegyzőkönyvhöz mellékletet is csatolhat, természetesen ennek csak akkor van értelme ha a vizsgált munkatárs vérvizsgálatot kér. Minden esetben amikor csatol az üzemorvos valamit egy jegyzőkönyvhöz alá is kell írnia azt, így a 4-es UseCase következik.
+			\item Alternatív forgatókönyv:  Az üzemorvos tetszőleges jegyzőkönyvhöz mellékletet is csatolhat, természetesen ennek csak akkor van értelme ha a vizsgált munkatárs vérvizsgálatot kér. Minden esetben amikor csatol az üzemorvos valamit egy jegyzőkönyvhöz alá is kell írnia azt, így a \textbf{9/a} UseCase következik.
 		\end{itemize}
+	\item [9/a] A rendszer ellenőrzi az üzemorvos által csatolt fájl hitelességét. Helyes csatolás esetén a \textbf{7-es} UseCase következik, ellenkező esetben visszaugrik a \textbf{8/a}-ra.
+	%\hrule
 	%-----------------------------------------------------
 	%TODO átírni az összes szart!!!!!
 	%-------------------------------------------------
-	\item [2/a] Nem megfelelő bejelentkezési adatok. Ugrás az 1-es UseCase-re.
+	\item [2/a] Nem megfelelő bejelentkezési adatok. Ugrás az \textbf{1-es} UseCase-re.
 	\item [6/a] A rendszer hibát talált az adatok kitöltésénél. 5-ös UseCase következik.
-	\item [9/a] Hiányzó vagy hibás aláírás esetén a 7-es UseCase következik.
-	\item [7/b] A rendszer hibát talált a fájl csatolásánál. 6-os UseCase következik.
+	\item [9/b] Hiányzó vagy hibás aláírás esetén a 7-es UseCase következik.
+	\item [9/c] A rendszer hibát talált a fájl csatolásánál. 6-os UseCase következik.
 \end{description}
 
 \newpage
